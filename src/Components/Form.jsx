@@ -8,49 +8,49 @@ class Form extends Component {
         <form>
           <div className="form-row">
             <div className="div.form-group col-md-6">
-              <label for="inputEmail4">Email</label>
+              <label for="inputEmail4">Name</label>
               <input
-                type="email"
+                type="text"
                 className="form-control"
-                id="inputEmail4"
-                placeholder="Email"
+                id="inputName"
+                placeholder="Enter Name"
               />
             </div>
             <div className="div form-group col-md-6">
-              <label for="inputPassword4">Password</label>
+              <label for="inputPassword4">Cell Number</label>
               <input
-                type="password"
+                type="number"
                 className="form-control"
-                id="inputPassword4"
+                id="inputPassword"
                 placeholder="Password"
               />
             </div>
           </div>
           <div className="form-group">
-            <label for="inputAddress">Address</label>
+            <label for="inputAddress">Enter Address</label>
             <input
               type="text"
               className="form-control"
               id="inputAddress"
-              placeholder="1234 Main St"
+              placeholder="Enter Address"
             />
           </div>
           <div className="form-group">
-            <label for="inputAddress">Address 2</label>
+            <label for="inputAddress">Enter Permanent Address</label>
             <input
               type="text"
               className="form-control"
               id="inputAddress"
-              placeholder="1234 Main St"
+              placeholder="Enter Permanet Address"
             />
           </div>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label for="inputCity">City</label>
-              <input type="text" className="form-control" id="inputCity" />
+              <label for="inputCity">Enter Province</label>
+              <input type="text" className="form-control" id="inputProvince" />
             </div>
             <div class="form-group col-md-4">
-              <label for="inputState">State</label>
+              <label for="inputState">City</label>
               <select id="inputState" class="form-control">
                 <option selected>Choose...</option>
                 <option>Lahore</option>
@@ -62,8 +62,8 @@ class Form extends Component {
               </select>
             </div>
             <div className="form-group col-md-2">
-              <label for="inputZip">Zip</label>
-              <input type="text" className="form-control" id="inputZip" />
+              <label for="inputZip">Enter Zip</label>
+              <input type="number" className="form-control" id="inputZip" />
             </div>
           </div>
           <button type="submit" class="btn btn-primary">
