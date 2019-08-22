@@ -1,33 +1,53 @@
 import React, { Component } from "react";
 
 class Form extends Component {
+  constructor() {
+    super();
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
   state = {};
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    const name = data.get("Name");
+    const cellNo = data.get("Cell");
+    const address = data.get("address");
+    const permanentAddress = data.get("permanent");
+    const province = data.get("province");
+    const city = data.get("city");
+    const zip = data.get("zip");
+    console.log(name, cellNo, address, permanentAddress, province, city, zip);
+  }
+
   render() {
     return (
       <div className="container">
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div className="form-row">
             <div className="div.form-group col-md-6">
-              <label for="inputEmail4">Name</label>
+              <label htmlFor="inputEmail4">Name</label>
               <input
                 type="text"
                 className="form-control"
                 id="inputName"
                 placeholder="Enter Name"
+                name="Name"
               />
             </div>
             <div className="div form-group col-md-6">
-              <label for="inputPassword4">Cell Number</label>
+              <label htmlFor="inputPassword4">Cell Number</label>
               <input
                 type="number"
                 className="form-control"
                 id="inputPassword"
                 placeholder="Password"
+                name="Cell"
               />
             </div>
           </div>
           <div className="form-group">
-            <label for="inputAddress">Enter Address</label>
+            <label htmlFor="inputAddress">Enter Address</label>
             <input
               type="text"
               className="form-control"
@@ -36,39 +56,48 @@ class Form extends Component {
             />
           </div>
           <div className="form-group">
-            <label for="inputAddress">Enter Permanent Address</label>
+            <label htmlFor="inputAddress">Enter Permanent Address</label>
             <input
               type="text"
               className="form-control"
               id="inputAddress"
               placeholder="Enter Permanet Address"
+              name="permanet"
             />
           </div>
           <div className="form-row">
             <div className="form-group col-md-6">
-              <label for="inputCity">Enter Province</label>
-              <input type="text" className="form-control" id="inputProvince" />
+              <label htmlFor="inputCity">Enter Province</label>
+              <input
+                type="text"
+                className="form-control"
+                id="inputProvince"
+                name="province"
+              />
             </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">City</label>
-              <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>Lahore</option>
-                <option>Islamabad</option>
-                <option>Karachi</option>
-                <option>Peshawar</option>
-                <option>Queta</option>
-                <option>Sargodha</option>
+            <div className="form-group col-md-4">
+              <label htmlFor="inputState">City</label>
+              <select id="inputState" className="form-control" name="city">
+                <option default>Choose...</option>
+                <option value="Lahore">Lahore</option>
+                <option value="Islamabad">Islamabad</option>
+                <option value="karachi">Karachi</option>
+                <option value="Peshawar">Peshawar</option>
+                <option value="Queta">Queta</option>
+                <option value="Sargodha">Sargodha</option>
               </select>
             </div>
             <div className="form-group col-md-2">
-              <label for="inputZip">Enter Zip</label>
-              <input type="number" className="form-control" id="inputZip" />
+              <label htmlFor="inputZip">Enter Zip</label>
+              <input
+                type="number"
+                className="form-control"
+                id="inputZip"
+                name="zip"
+              />
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">
-            Add Contact
-          </button>
+          <button className="btn btn-primary">Add Contact</button>
         </form>
       </div>
     );
